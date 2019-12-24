@@ -1,0 +1,6 @@
+{
+  "app_name": "Salary calculator",
+  "port": ":80",
+  "static_path": "./static",
+  "mode": "dev"
+}
