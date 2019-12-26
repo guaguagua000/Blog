@@ -7,7 +7,6 @@ import (
 
 //读取配置文件
 func LoadBaseConfig() {
-
 	viper.SetConfigFile("config.json")
 	viper.SetConfigType("json")
 

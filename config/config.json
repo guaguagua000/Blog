@@ -1,6 +1,3 @@
 {
-  "app_name": "test",
-  "port": ":80",
-  "static_path": "./static",
-  "mode": "dev"
+  "port": ":80"
 }

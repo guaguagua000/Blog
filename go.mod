@@ -1,4 +1,4 @@
-module gin_learning
+module Blog
 
 go 1.13
 

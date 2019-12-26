@@ -1,18 +1,17 @@
 package main
 
 import (
-	"gin_learning/config"
+	"Blog/config"
 	"github.com/gin-gonic/gin"
 )
 
 func main() {
-
-	app := gin.Default()
-
-	app.GET("/", func(c *gin.Context) {
+	router := gin.Default()
+	gin.SetMode(gin.DebugMode)
+	router.GET("/", func(c *gin.Context) {
 		c.JSON(200, gin.H{
-			"message": "pong",
+			"message": "Hello",
 		})
 	})
-	app.Run(config.GetPort())
+	router.Run(config.GetPort())
 }
