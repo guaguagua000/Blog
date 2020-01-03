@@ -3,10 +3,12 @@ package config
 import (
 	"fmt"
 	"github.com/spf13/viper"
+	"time"
 )
 
 //读取配置文件
 func LoadBaseConfig() {
+
 	viper.SetConfigFile("config.json")
 	viper.SetConfigType("json")
 
@@ -17,8 +19,16 @@ func LoadBaseConfig() {
 }
 
 //端口号
-func GetPort() string {
-	return viper.GetString("main_port")
+func GetPort() int {
+	return viper.GetInt("main_port")
+}
+
+func GetReadTimeOut() time.Duration {
+	return viper.GetDuration("read_timeout")
+}
+
+func GetWriteTimeOut() time.Duration {
+	return viper.GetDuration("write_timeout")
 }
 
 func GetMySQLConfig() string {
