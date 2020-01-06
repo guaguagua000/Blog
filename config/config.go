@@ -1,7 +1,9 @@
 package config
 
 import (
+	"database/sql"
 	"fmt"
+	_ "github.com/go-sql-driver/mysql"
 	"github.com/spf13/viper"
 	"time"
 )
@@ -31,12 +33,17 @@ func GetWriteTimeOut() time.Duration {
 	return viper.GetDuration("write_timeout")
 }
 
-func GetMySQLConfig() string {
+func ConnectMySQL() {
 	host := viper.GetString("host")
 	mysqlUser := viper.GetString("mysql_user")
 	mysqlPassword := viper.GetString("mysql_password")
 	mysqlPort := viper.GetString("mysql_port")
 	databaseName := viper.GetString("database_name")
 	mysqlConfig := mysqlUser + ":" + mysqlPassword + "@tcp(" + host + mysqlPort + ")" + databaseName
-	return mysqlConfig
+	db, err := sql.Open("mysql", mysqlConfig)
+	if err != nil {
+		panic(err)
+		return
+	}
+	defer db.Close()
 }
