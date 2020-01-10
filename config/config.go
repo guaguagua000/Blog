@@ -21,8 +21,8 @@ func LoadBaseConfig() {
 }
 
 //端口号
-func GetPort() int {
-	return viper.GetInt("main_port")
+func GetPort() string {
+	return viper.GetString("main_port")
 }
 
 func GetReadTimeOut() time.Duration {
@@ -40,10 +40,10 @@ func ConnectMySQL() {
 	mysqlPort := viper.GetString("mysql_port")
 	databaseName := viper.GetString("database_name")
 	mysqlConfig := mysqlUser + ":" + mysqlPassword + "@tcp(" + host + mysqlPort + ")" + databaseName
-	db, err := sql.Open("mysql", mysqlConfig)
+	Db, err := sql.Open("mysql", mysqlConfig)
 	if err != nil {
 		panic(err)
 		return
 	}
-	defer db.Close()
+	defer Db.Close()
 }
