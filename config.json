@@ -1,7 +1,5 @@
 {
   "host": "192.144.210.253",
-  "read_timeout": 60,
-  "write_timeout": 60,
   "main_port": 80,
   "mysql_port": ":3306",
   "mysql_user": "ubuntu",
