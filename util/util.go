@@ -1,6 +1,7 @@
 package util
 
 import (
+	_ "Blog/util/conf"
 	"Blog/util/db"
 	"Blog/util/log"
 	"Blog/util/mc"
