@@ -1,6 +1,7 @@
 package metrics
 
 import (
+	"Blog/util/conf"
 	"github.com/prometheus/client_golang/prometheus"
 )
 
