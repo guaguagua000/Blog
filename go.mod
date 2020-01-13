@@ -24,7 +24,7 @@ require (
 	github.com/go-redis/redis v6.15.6+incompatible
 	github.com/go-sql-driver/mysql v1.5.0
 	github.com/google/btree v1.0.0 // indirect
-	github.com/iGoogle-ink/gopay v1.5.1
+	github.com/iGoogle-ink/gopay v1.5.1 // indirect
 	github.com/imroc/req v0.2.4
 	github.com/jehiah/go-strftime v0.0.0-20171201141054-1d33003b3869 // indirect
 	github.com/jinzhu/gorm v1.9.12
@@ -38,7 +38,7 @@ require (
 	github.com/onsi/ginkgo v1.8.0 // indirect
 	github.com/onsi/gomega v1.5.0 // indirect
 	github.com/pkg/errors v0.9.0 // indirect
-	github.com/rfyiamcool/cronlib v0.0.0-20190601162928-ca36e174d432
+	github.com/rfyiamcool/cronlib v0.0.0-20190601162928-ca36e174d432 // indirect
 	github.com/satori/go.uuid v1.2.0
 	github.com/smartystreets/goconvey v1.6.4
 	github.com/tebeka/strftime v0.1.3 // indirect
