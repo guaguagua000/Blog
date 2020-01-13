@@ -46,11 +46,6 @@ type Config struct {
 	KafkaSwitch bool   `ini:"kafka.switch"`
 	KafkaBroker string `ini:"kafka.broker"`
 
-	WxpayH5Appid     string `ini:"wxpay.h5.appid"`
-	WxpayH5Mchid     string `ini:"wxpay.h5.mchid"`
-	WxpayH5Apikey    string `ini:"wxpay.h5.apikey"`
-	WxpayH5Notifyurl string `ini:"wxpay.h5.notifyurl"`
-
 	IplocationQqwryPath string `ini:"iplocation.qqwry.path"`
 
 	TaskSwitch    bool   `ini:"task.switch"`
