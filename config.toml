@@ -7,4 +7,9 @@ logFilePath = ""
 logFileName = "blog.log"
 
 [mysql]
-url = 'root:Bao7102655@tcp("192.144.210.253:3306")/Blog?charset=utf8mb4'
+host = "192.144.210.253"
+port = "3306"
+user = "root"
+password = "Bao7102655"
+protocol = "tcp"
+database = "blog"
