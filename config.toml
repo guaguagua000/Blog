@@ -5,3 +5,6 @@ port = "80"
 [log]
 logFilePath = ""
 logFileName = "blog.log"
+
+[mysql]
+url = 'root:Bao7102655@tcp("192.144.210.253:3306")/Blog?charset=utf8mb4'

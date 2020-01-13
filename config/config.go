@@ -5,7 +5,7 @@ import (
 	"github.com/spf13/viper"
 )
 
-func init() {
+func Init() {
 	viper.SetConfigFile("config.toml")
 	viper.SetConfigType("toml")
 	err := viper.ReadInConfig()
