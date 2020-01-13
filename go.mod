@@ -6,9 +6,6 @@ require (
 	github.com/GeertJohan/go.rice v1.0.0
 	github.com/Pallinder/go-randomdata v1.2.0
 	github.com/beevik/etree v1.1.0
-	github.com/bilibili/memcache v0.0.0-20190606090951-c3f7f41f0f74 // indirect
-	github.com/bilibili/redis v0.0.0-20191111025012-4215a42ec2a9 // indirect
-	github.com/bilibili/twirp v0.0.0-20191202104943-046788d23979 // indirect
 	github.com/bwmarrin/snowflake v0.3.0
 	github.com/chromedp/chromedp v0.5.2
 	github.com/confluentinc/confluent-kafka-go v1.3.0
@@ -26,32 +23,35 @@ require (
 	github.com/go-ini/ini v1.51.1
 	github.com/go-redis/redis v6.15.6+incompatible
 	github.com/go-sql-driver/mysql v1.5.0
+	github.com/google/btree v1.0.0 // indirect
 	github.com/iGoogle-ink/gopay v1.5.1
 	github.com/imroc/req v0.2.4
 	github.com/jehiah/go-strftime v0.0.0-20171201141054-1d33003b3869 // indirect
 	github.com/jinzhu/gorm v1.9.12
+	github.com/jonboulle/clockwork v0.1.0 // indirect
 	github.com/json-iterator/go v1.1.8
-	github.com/k0kubun/colorstring v0.0.0-20150214042306-9440f1994b88 // indirect
-	github.com/k0kubun/pp v3.0.1+incompatible // indirect
 	github.com/kayon/iploc v0.0.0-20190319151701-e279c2dd95c0
 	github.com/lestrrat-go/file-rotatelogs v2.2.0+incompatible
 	github.com/lestrrat-go/strftime v1.0.1 // indirect
-	github.com/mattn/go-colorable v0.1.4 // indirect
 	github.com/mattn/go-isatty v0.0.11 // indirect
 	github.com/mroth/weightedrand v0.2.1
-	github.com/opentracing/opentracing-go v1.1.0 // indirect
+	github.com/onsi/ginkgo v1.8.0 // indirect
+	github.com/onsi/gomega v1.5.0 // indirect
 	github.com/pkg/errors v0.9.0 // indirect
-	github.com/prometheus/client_golang v1.3.0 // indirect
 	github.com/rfyiamcool/cronlib v0.0.0-20190601162928-ca36e174d432
-	github.com/robfig/cron v1.2.0 // indirect
 	github.com/satori/go.uuid v1.2.0
 	github.com/smartystreets/goconvey v1.6.4
-	github.com/spf13/cobra v0.0.5 // indirect
-	github.com/spf13/viper v1.6.1 // indirect
 	github.com/tebeka/strftime v0.1.3 // indirect
 	github.com/tidwall/gjson v1.3.5
 	github.com/vansante/go-ffprobe v1.1.0
 	github.com/wumansgy/goEncrypt v0.0.0-20190822060801-cf9a6f8787e4
+	go.uber.org/atomic v1.4.0 // indirect
+	go.uber.org/multierr v1.1.0 // indirect
 	go.uber.org/zap v1.10.0
+	golang.org/x/net v0.0.0-20190613194153-d28f0bde5980 // indirect
+	golang.org/x/sys v0.0.0-20191220142924-d4481acd189f // indirect
 	golang.org/x/text v0.3.0
+	gopkg.in/ini.v1 v1.51.0 // indirect
+	gopkg.in/urfave/cli.v1 v1.20.0
+	gopkg.in/yaml.v2 v2.2.4 // indirect
 )

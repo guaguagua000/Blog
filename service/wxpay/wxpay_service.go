@@ -4,6 +4,7 @@ import (
 	"Blog/config"
 	"Blog/log"
 	"github.com/iGoogle-ink/gopay"
+	"github.com/iGoogle-ink/gopay/wechat"
 	"go.uber.org/zap"
 )
 
@@ -19,7 +20,11 @@ func (this *WxpayService) WxH5pay(title string, orderNo string, fee int64, userI
 	//    MchID：商户ID
 	//    apiKey：API秘钥值
 	//    isProd：是否是正式环境
-	client := gopay.NewWeChatClient(config.GlobalConfig.WxpayH5Appid, config.GlobalConfig.WxpayH5Mchid, config.GlobalConfig.WxpayH5Apikey, true)
+	client := wechat.Client{}
+	client.AppId = config.GlobalConfig.WxpayH5Appid
+	client.MchId = config.GlobalConfig.WxpayH5Mchid
+	client.ApiKey = config.GlobalConfig.WxpayH5Apikey
+	client.IsProd = true
 
 	//初始化参数Map
 	body := make(gopay.BodyMap)
@@ -29,7 +34,7 @@ func (this *WxpayService) WxH5pay(title string, orderNo string, fee int64, userI
 	body.Set("total_fee", fee)
 	body.Set("spbill_create_ip", userIp)
 	body.Set("notify_url", config.GlobalConfig.WxpayH5Notifyurl)
-	body.Set("trade_type", gopay.TradeType_H5)
+	body.Set("trade_type", wechat.TradeType_H5)
 
 	//请求支付下单，成功后得到结果
 	wxRsp, err := client.UnifiedOrder(body)
@@ -56,13 +61,17 @@ func (this *WxpayService) IsOrderSuccess(orderNo string) (success bool) {
 	//    MchID：商户ID
 	//    apiKey：API秘钥值
 	//    isProd：是否是正式环境
-	client := gopay.NewWeChatClient(config.GlobalConfig.WxpayH5Appid, config.GlobalConfig.WxpayH5Mchid, config.GlobalConfig.WxpayH5Apikey, true)
+	client := wechat.Client{}
+	client.AppId = config.GlobalConfig.WxpayH5Appid
+	client.MchId = config.GlobalConfig.WxpayH5Mchid
+	client.ApiKey = config.GlobalConfig.WxpayH5Apikey
+	client.IsProd = true
 
 	//初始化参数结构体
 	body := make(gopay.BodyMap)
 	body.Set("out_trade_no", orderNo)
 	body.Set("nonce_str", gopay.GetRandomString(32))
-	body.Set("sign_type", gopay.SignType_MD5)
+	body.Set("sign_type", wechat.SignType_MD5)
 
 	//请求微信订单查询接口
 	wxRsp, err := client.QueryOrder(body)

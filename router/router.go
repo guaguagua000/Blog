@@ -1,6 +1,7 @@
 package router
 
 import (
+	Blog_config "Blog/config"
 	"Blog/controller"
 	c_kafka "Blog/controller/kafka"
 	c_video "Blog/controller/video"
@@ -62,7 +63,7 @@ func Init() *gin.Engine {
 	//视频相关接口
 	videoGroup := engine.Group("/api/video")
 	//加密api响应数据中间件
-	if apiproject_config.GlobalConfig.ServiceApiResponseEncrypt {
+	if Blog_config.GlobalConfig.ServiceApiResponseEncrypt {
 		videoGroup.Use(middleware.EncryptResponseMiddleware)
 	}
 	videoGroup.GET("/findList", c_video.FindVideoList)
@@ -75,7 +76,7 @@ func Init() *gin.Engine {
 	//kafka相关
 	kafkaGroup := engine.Group("/api/kafka")
 	//加密api响应数据中间件
-	if apiproject_config.GlobalConfig.ServiceApiResponseEncrypt {
+	if Blog_config.GlobalConfig.ServiceApiResponseEncrypt {
 		kafkaGroup.Use(middleware.EncryptResponseMiddleware)
 	}
 	kafkaGroup.GET("/sendMessage", c_kafka.SendMessage)
@@ -83,7 +84,7 @@ func Init() *gin.Engine {
 	//微信支付相关
 	wxpayGroup := engine.Group("/api/wxpay")
 	//加密api响应数据中间件
-	if apiproject_config.GlobalConfig.ServiceApiResponseEncrypt {
+	if Blog_config.GlobalConfig.ServiceApiResponseEncrypt {
 		wxpayGroup.Use(middleware.EncryptResponseMiddleware)
 	}
 	wxpayGroup.POST("/wxH5Pay", c_wxpay.WxH5Pay)
@@ -91,7 +92,7 @@ func Init() *gin.Engine {
 
 	//配置反向代理api
 	reverseproxyList := []map[string]string{}
-	jsoniter.UnmarshalFromString(apiproject_config.GlobalConfig.ReverseproxyList, &reverseproxyList)
+	jsoniter.UnmarshalFromString(Blog_config.GlobalConfig.ReverseproxyList, &reverseproxyList)
 	log.Logger.Info("初始化路由, 查询反向代理配置", zap.Any("reverseproxyList", reverseproxyList))
 	for _, reverseProxy := range reverseproxyList {
 		//代理匹配urlPrefix的api到target服务
