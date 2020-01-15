@@ -2,6 +2,7 @@ package log
 
 import (
 	"Blog/config"
+	"Blog/util"
 	"fmt"
 	"github.com/gin-gonic/gin"
 	"github.com/sirupsen/logrus"
@@ -16,9 +17,18 @@ func LoggerToFile() gin.HandlerFunc {
 	logFileName := config.GetString("log.logFileName")
 	fileName := path.Join(logFilePath, logFileName)
 
+	fileExist, err := util.PathExists(fileName)
+	if !fileExist && err == nil {
+		f, err := os.Create(fileName)
+		defer f.Close()
+		if err != nil {
+			fmt.Println("err:", err)
+		}
+	}
+
 	src, err := os.OpenFile(fileName, os.O_APPEND|os.O_WRONLY, os.ModeAppend)
 	if err != nil {
-		fmt.Println("err", err)
+		fmt.Println("err:", err)
 	}
 
 	logger := logrus.New()

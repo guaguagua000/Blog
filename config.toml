@@ -3,7 +3,7 @@ host = "127.0.0.1"
 port = "80"
 
 [log]
-logFilePath = ""
+logFilePath = "log//"
 logFileName = "blog.log"
 
 [mysql]
