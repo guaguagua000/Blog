@@ -1,6 +1,6 @@
 [mainApp]
 host = "127.0.0.1"
-port = "80"
+port = "8081"
 
 [log]
 logFilePath = "log//"
@@ -13,3 +13,9 @@ user = "root"
 password = "Bao7102655"
 protocol = "tcp"
 database = "blog"
+charset = "charset=utf8mb4"
+timeSupport = "parseTime=True"
+
+[github]
+clientId = "389fcfe7392aea24002c"
+clientSecret = "eeb80ef351222e070bc7aa235acf3af68ffafceb"
