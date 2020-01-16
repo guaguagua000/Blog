@@ -13,6 +13,8 @@ user = "root"
 password = "Bao7102655"
 protocol = "tcp"
 database = "blog"
+charset = "charset=utf8mb4"
+timeSupport = "parseTime=True"
 
 [github]
 clientId = "389fcfe7392aea24002c"
