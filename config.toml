@@ -13,3 +13,7 @@ user = "root"
 password = "Bao7102655"
 protocol = "tcp"
 database = "blog"
+
+[github]
+clientId = "389fcfe7392aea24002c"
+clientSecret = "eeb80ef351222e070bc7aa235acf3af68ffafceb"
