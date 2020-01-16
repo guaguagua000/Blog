@@ -7,7 +7,7 @@ import "database/sql"
 */
 type User struct {
 	Id       int64         `gorm:"PRIMARY_KEY;AUTO_INCREMENT;NOT NULL"`
-	Username string        `gorm:"Type:varchar(64);NOT NULL"`
+	Username string        `gorm:"Type:varchar(64);NOT NULL;UNIQUE"`
 	Password string        `gorm:"Type:varchar(64);NOT NULL"`
 	Nickname string        `gorm:"Type:varchar(64);NOT NULL"`
 	Avatar   string        `gorm:"Type:varchar(64);NOT NULL;DEFAULT:'public/img/default_avatar.png'"`
